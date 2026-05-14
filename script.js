@@ -75,13 +75,19 @@ document.querySelectorAll(".card, .item, .info-card").forEach(el => {
     observer.observe(el);
 });
 
+document.addEventListener("DOMContentLoaded", function () {
 
-document.addEventListener("DOMContentLoaded", function(){
+    const burger = document.getElementById("burger");
+    const navLinks = document.getElementById("navLinks");
 
-    console.log("JS LOADED");
-
-    document.getElementById("burger").addEventListener("click", function(){
-        document.getElementById("navLinks").classList.toggle("active");
+    burger.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
     });
 
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+    });
 });
